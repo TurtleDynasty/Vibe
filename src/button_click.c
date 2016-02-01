@@ -3,12 +3,12 @@
 static Window *window;
 static TextLayer *text_layer;
 
-static const uint32_t up_segments[] = { 200, 50, 100 };
-static const uint32_t select_segments[] = { 50, 50, 100, 50, 50 };
-static const uint32_t down_segments[] = { 50, 50, 50, 50, 50, 50, 200 };
+static const uint32_t up_segments[] = { 100, 50, 200, 50, 50, 100, 200, 50, 100 }; //U-=. P=-
+static const uint32_t select_segments[] = { 200, 50, 50, 100, 200, 50, 200 }; //O=. K==
+static const uint32_t down_segments[] = { 100, 50, 50, 50, 100, 100, 200, 50, 50, 100, 100, 50, 200, 50, 200, 100, 50, 50, 100, 50, 200 }; //D-.- O=. W-== N.-=
 
 static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
-  text_layer_set_text(text_layer, "Select");
+  text_layer_set_text(text_layer, "OK");
   VibePattern pat = {
     .durations = select_segments,
     .num_segments = ARRAY_LENGTH(select_segments),
@@ -17,7 +17,7 @@ static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
 }
 
 static void up_click_handler(ClickRecognizerRef recognizer, void *context) {
-  text_layer_set_text(text_layer, "Up");
+  text_layer_set_text(text_layer, "UP");
   VibePattern pat = {
     .durations = up_segments,
     .num_segments = ARRAY_LENGTH(up_segments),
@@ -26,7 +26,7 @@ static void up_click_handler(ClickRecognizerRef recognizer, void *context) {
 }
 
 static void down_click_handler(ClickRecognizerRef recognizer, void *context) {
-  text_layer_set_text(text_layer, "Down");
+  text_layer_set_text(text_layer, "DOWN");
   VibePattern pat = {
     .durations = down_segments,
     .num_segments = ARRAY_LENGTH(down_segments),
