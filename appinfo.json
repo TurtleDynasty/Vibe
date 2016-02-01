@@ -1,0 +1,23 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "turtledynasty@gmail.com",
+    "longName": "vibe",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "vibe",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "0c0608c9-2192-4386-8440-721bae1d1828",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
