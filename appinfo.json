@@ -4,10 +4,60 @@
         ""
     ],
     "companyName": "turtledynasty@gmail.com",
+    "enableMultiJS": false,
     "longName": "vibe",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "images/mood5",
+                "memoryFormat": "Smallest",
+                "name": "IMAGE_MOOD_FIVE_ID",
+                "spaceOptimization": "memory",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mood4",
+                "memoryFormat": "Smallest",
+                "name": "IMAGE_MOOD_FOUR_ID",
+                "spaceOptimization": "memory",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mood3",
+                "memoryFormat": "Smallest",
+                "name": "IMAGE_MOOD_THREE_ID",
+                "spaceOptimization": "memory",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mood2",
+                "memoryFormat": "Smallest",
+                "name": "IMAGE_MOOD_TWO_ID",
+                "spaceOptimization": "memory",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mood1",
+                "memoryFormat": "Smallest",
+                "name": "IMAGE_MOOD_ONE_ID",
+                "spaceOptimization": "memory",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mood0",
+                "memoryFormat": "Smallest",
+                "name": "IMAGE_MOOD_ZERO_ID",
+                "spaceOptimization": "memory",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            }
+        ]
     },
     "sdkVersion": "3",
     "shortName": "vibe",

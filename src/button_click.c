@@ -1,9 +1,16 @@
 #include <pebble.h>
 
+#define DOT 50
+#define DASH 100
+#define LONGDASH 200
+#define SPACE 50
+
+
+
 static Window *window;
 static TextLayer *text_layer;
 
-static const uint32_t up_segments[] = { 100, 50, 200, 50, 50, 100, 200, 50, 100 }; //U-=. P=-
+static const uint32_t up_segments[] = { DASH, 50, LONGDASH, 50, DOT, 100, LONGDASH, 50, DASH }; //U-=. P=-
 static const uint32_t select_segments[] = { 200, 50, 50, 100, 200, 50, 200 }; //O=. K==
 static const uint32_t down_segments[] = { 100, 50, 50, 50, 100, 100, 200, 50, 50, 100, 100, 50, 200, 50, 200, 100, 50, 50, 100, 50, 200 }; //D-.- O=. W-== N.-=
 
@@ -55,12 +62,23 @@ static void window_unload(Window *window) {
 }
 
 static void init(void) {
+  
   window = window_create();
   window_set_click_config_provider(window, click_config_provider);
   window_set_window_handlers(window, (WindowHandlers) {
 	.load = window_load,
     .unload = window_unload,
   });
+  
+  static GBitmap *s_bitmap_mood_zero;
+  s_bitmap_mood_zero = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_MOOD_ZERO_ID);
+  static BitmapLayer *s_bitmap_layer;
+  s_bitmap_layer = bitmap_layer_create(GRect(5, 5, 48, 48));
+  bitmap_layer_set_compositing_mode(s_bitmap_layer, GCompOpSet);
+  bitmap_layer_set_bitmap(s_bitmap_layer, s_bitmap_mood_zero);
+  layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bitmap_layer));
+  
+  
   const bool animated = true;
   window_stack_push(window, animated);
 }
@@ -69,8 +87,8 @@ static void deinit(void) {
   window_destroy(window);
 }
 
-int main(void) {
+/*int main(void) {
   init();
   app_event_loop();
   deinit();
-}
+}*/
